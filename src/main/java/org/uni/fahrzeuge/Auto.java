@@ -1,7 +1,6 @@
 package org.uni.fahrzeuge;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import java.awt.*;
 
