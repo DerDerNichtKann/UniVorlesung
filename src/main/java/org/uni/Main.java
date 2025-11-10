@@ -3,6 +3,7 @@ package org.uni;
 import org.uni.fahrzeuge.Auto;
 
 import java.awt.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Main {
     static void main(String[] args) {
@@ -54,7 +55,9 @@ public class Main {
         summenBerechnung(10, 30);
         quadratZahlenBis(200);
         energieMonitor();
-
+        BenzinPreis();
+        PyramidenVolumen();
+        StückzahlinAlteMaße(157);
     }
 
     private static void Kreisberchnung() {
@@ -164,6 +167,47 @@ public class Main {
             }
             energielevel = energielevel - 10;
         }
+    }
+
+    private static void BenzinPreis(){
+        int getankteLiter = 62;
+        double PreisproLiter = 1.459;
+        double Betrag;
+        Betrag = getankteLiter * PreisproLiter;
+        IO.println("Brutto Betrag beträgt: " + Betrag);
+        double Nettobetrag;
+        Nettobetrag = Betrag * 100 / 119;
+        IO.println("Der Netto Betrag beträgt: " + Nettobetrag);
+    }
+
+    private static void PyramidenVolumen() {
+        double h = 280;
+        double g = 440 * 440;
+        double VolumenEllen3 = (1.0 / 3.0) * g * h;
+        double meterProElle = 0.5236;
+        double m3ProRoemischerScheffel = 0.00873;
+        double m3ProElle3 = Math.pow(meterProElle, 3);
+        double Meterhoch3 = VolumenEllen3 * m3ProElle3;
+
+        double römischeScheffel = Meterhoch3 / m3ProRoemischerScheffel;
+
+        IO.println("Das Volumen beträgt " + VolumenEllen3 + " Ellen hoch 3, das entspricht " + Meterhoch3 + " m3.");
+        IO.println("Das Volumen beträgt " + VolumenEllen3 + " Ellen hoch 3, das entspricht " + römischeScheffel + " römischen Scheffeln.");
+
+        double anzahlBloecke = VolumenEllen3 / 8;
+
+        IO.println("Dafür werden etwa " + anzahlBloecke + " Sandsteinblöcke (a 8 Ellen³) benötigt.");
+    }
+
+    private static void StückzahlinAlteMaße(int Stücke) {
+        int originalStücke = Stücke;
+        int gros = Stücke / 144;
+        Stücke = Stücke % 144;
+        int schock = Stücke / 60;
+        Stücke = Stücke % 60;
+        int dutzend = Stücke / 12;
+        int restStück = Stücke % 12;
+        IO.println(originalStücke + " N sind " + gros + " Gros, " + schock + " Schock, " + dutzend + " Dutzend und " + restStück + " Stück.");
     }
 }
 
