@@ -1,0 +1,169 @@
+package org.uni;
+
+import org.uni.fahrzeuge.Auto;
+
+import java.awt.*;
+
+public class Main {
+    static void main(String[] args) {
+        System.out.println("Hello World!");
+        IO.println("Hello World!");
+
+        for (int i = 1; i <= 5; i++) {
+            IO.println("i = " + i);
+        }
+        // int ganze zahlen double kommazahlen
+        for (int i = 1; i <= 1000; i++) {
+            IO.println("Programmieren ist toll! " + i);
+        }
+
+        String text = "Hallo Welt";
+        // 1 ist inklusive 5 ist exklusive also von Hallo Welt da man von 0 zählt also allo nur.
+        // Bei indexof einfach ab wann dieser Buchstaben kommen also ab 1, da es ja nur allo ist.
+        String hallo = text.substring(1, 5);
+        IO.println(hallo);
+        text.substring(1, 5).indexOf("llo");
+
+        KomischeBerechnungen();
+        Autostuff();
+    }
+
+    private static void Autostuff(){
+        Auto auto1 = new Auto("VW", "Grün", 0, 80, 0);
+        Auto auto2 = new Auto("Skoda", "Blau", 0, 50, 0);
+
+        IO.println(auto1.marke);
+        IO.println(auto2.maxTank);
+        IO.println(Auto.getAnzahlAutos());
+    }
+
+
+    private static void KomischeBerechnungen() {
+        Kreisberchnung();
+        BMI();
+        for (int i = 1; i <= 6; i++) {
+            String bewertung = notenBewertung(i);
+            IO.println(bewertung);
+        }
+    /*  notenBewertung(1);
+        notenBewertung(2);
+        notenBewertung(3);
+        notenBewertung(4);
+        notenBewertung(5);*/
+
+        summenBerechnung(10, 30);
+        quadratZahlenBis(200);
+        energieMonitor();
+
+    }
+
+    private static void Kreisberchnung() {
+        //konstante mit final (wer hätte das nur gedacht???) immer GROß schreiben
+        final double PI = 3.14159;
+        double radius = 5.2234653796756793776927939;
+        double umfang;
+        double fläche;
+        umfang = 2 * PI * radius;
+        fläche = PI * radius * radius;
+        IO.println("Der Kreis mit dem Radius: " + radius + " , hat den Umfang von: "
+                + umfang + " LE." + "\n" + "Sowie den Flächeninhalt von: " + fläche + " FE.");
+    }
+
+    private static void BMI() {
+        double gewichtinKG = 62.34;
+        double größeinMeter = 1.865;
+        double bmi;
+
+        bmi = gewichtinKG / (größeinMeter * größeinMeter);
+        IO.println("Dein BMI Wert beträgt: " + bmi);
+    }
+
+    private static String notenBewertung(int note) {
+        String bewertung;
+        switch (note) {
+            case 1:
+                bewertung = "Sehr gut";
+                break;
+            case 2:
+                bewertung = "Gut";
+                break;
+            case 3:
+                bewertung = "Befriedigend";
+                break;
+            case 4:
+                bewertung = "Ausreichend";
+                break;
+            case 5:
+                bewertung = "Mangelhaft";
+                break;
+            default:
+                bewertung = "Ungültige Note";
+
+        }
+        return bewertung;
+    }
+
+
+   /* private static String notenBewertung(int note) {
+        String bewertung = switch (note) {
+            case 1 -> "Sehr gut";
+            case 2 -> "Gut";
+            case 3 -> "Befriedigend";
+            case 4 -> "Ausreichend";
+            case 5 -> "Mangelhaft";
+            default -> "Ungültige Note";
+        };
+        return bewertung;
+    }
+
+    private static String notenBewertung(int note) {
+        String bewertung;
+        if (note == 1) {
+            bewertung = "Sehr gut";
+        } else if (note == 2) {
+            bewertung = "Gut";
+        } else if (note == 3) {
+            bewertung = "Befriedigend";
+        } else if (note == 4) {
+            bewertung = "Ausreichend";
+        } else if (note == 5) {
+            bewertung = "Mangelhaft";
+        } else {
+            bewertung = "Ungültige Note";
+        }
+        return bewertung;
+    }*/
+
+    private static void summenBerechnung(int start, int ende) {
+        double summe = 0;
+        for (int i = start; i <= ende; i++) {
+            summe = summe + i;
+        }
+        IO.println("Die Summe von " + start + " bis " + ende + " ergibt: " + summe);
+    }
+
+    private static void quadratZahlenBis(int grenze) {
+        int zahl = 1;
+        while (zahl * zahl < grenze) {
+            IO.println(zahl * zahl);
+            zahl++;
+        }
+    }
+
+    private static void energieMonitor() {
+        int energielevel = 100;
+        while (energielevel >= 0) {
+            if (energielevel >= 70) {
+                IO.println("Energie stabil " + energielevel);
+            } else if (energielevel >= 30) {
+                IO.println("Warnung: Energie sinkt " + energielevel);
+            } else if (energielevel > 0) {
+                IO.println("Kritusch! Energie fast erschöpft! " + energielevel);
+            } else if (energielevel == 0) {
+                IO.println("Systeme abgeschaltet " + energielevel);
+            }
+            energielevel = energielevel - 10;
+        }
+    }
+}
+
