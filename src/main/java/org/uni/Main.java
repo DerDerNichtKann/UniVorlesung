@@ -2,10 +2,12 @@ package org.uni;
 
 import org.uni.fahrzeuge.Auto;
 
+import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.ArrayList;
 
 public class Main {
+    public static final double PREISPROLITER = 2;
     static void main(String[] args) {
         System.out.println("Hello World!");
         IO.println("Hello World!");
@@ -30,12 +32,34 @@ public class Main {
     }
 
     private static void Autostuff(){
+     /*   ArrayList<Auto> autos = new ArrayList<>();
+        autos.add(new Auto("VW", "Grün", 0, 80, 0));
+        autos.add(new Auto("Skoda", "Blau", 0, 50, 0));
+        IO.println(autos.size());
+        IO.println(autos.getFirst().getMaxTank());
+        IO.println(autos.getLast().getMarke()); */
+        /*
+        WENN DER KONSTRUKTOR NUR public Auto(){} ist:
+        */
+        Auto auto = new Auto();
+        auto.setMarke("VW");
+        auto.setKilometerstand(0);
+        auto.setMaxTank(500);
+        auto.setTankstand(400);
+        auto.setVerbrauch(4);
+        auto.tanken();
+        auto.fahre(1000);
+
+
+        /*
+        statt:
         Auto auto1 = new Auto("VW", "Grün", 0, 80, 0);
         Auto auto2 = new Auto("Skoda", "Blau", 0, 50, 0);
-
         IO.println(auto1.marke);
         IO.println(auto2.maxTank);
+
         IO.println(Auto.getAnzahlAutos());
+         */
     }
 
 
