@@ -2,6 +2,9 @@ package org.uni;
 
 import org.uni.fahrzeuge.Auto;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Main {
     public static final double PREISPROLITER = 2;
 
@@ -26,7 +29,21 @@ public class Main {
 
         KomischeBerechnungen();
         Autostuff();
+        Runden();
     }
+
+    private static void Runden(){
+        double preis = 10.145;
+        String formatierterPreis = String.format("%.2f", preis);
+        System.out.println(formatierterPreis);
+
+        BigDecimal anderPreis = new BigDecimal("10.145");
+        BigDecimal gerundeterPreis = anderPreis.setScale(2, RoundingMode.HALF_UP);
+        System.out.println(gerundeterPreis);
+    }
+
+
+
 
     private static void Autostuff() {
      /*   ArrayList<Auto> autos = new ArrayList<>();
