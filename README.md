@@ -10,7 +10,8 @@ Ein Maven-Projekt für die begleitenden Beispiele aus Gabis Programmierunterrich
 ```
 .
 ├── pom.xml              # Maven-Konfiguration (Java 25, Lombok als Provided)
-└── src/main/java        # Platz für Beispielcode und Übungen
+├── src/main/java        # Platz für Beispielcode und Übungen
+└── racket/              # Alternative Implementierung der Übungen in Racket
 ```
 
 ## Build & Run
@@ -27,6 +28,13 @@ Das Ergebnis liegt anschließend unter `target/`. Falls eine `main`-Klasse vorha
 - Fahrzeug-Demo (`Auto` in `org.uni.fahrzeuge`) mit Tanken/Fahren-Logik, verschiedenen Überladungen von `tanken()` sowie Verbrauchsberechnung.
 
 Der `main`-Einstieg ruft nacheinander alle Demos auf; beim Start erhält man somit eine Textausgabe mit den Ergebnissen der Übungen.
+
+## Racket-Version
+Alle Routinen gibt es auch in `racket/main.rkt`. Ausführen lässt sich die Übersetzung mit:
+```bash
+racket racket/main.rkt
+```
+Die Racket-Variante deckt dieselben Aufgaben ab (Ausgaben, mathematische Helfer, Energiemonitor, Umrechnungen sowie die Auto-Simulation).
 
 ## Lernziele / Inhalte
 - Sprachfeatures aus modernen Java-Versionen ausprobieren
