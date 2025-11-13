@@ -2,10 +2,6 @@ package org.uni;
 
 import org.uni.fahrzeuge.Auto;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
-
 public class Main {
     public static final double PREISPROLITER = 2;
     static void main(String[] args) {
@@ -47,6 +43,8 @@ public class Main {
         auto.setMaxTank(500);
         auto.setTankstand(400);
         auto.setVerbrauch(4);
+        auto.tanken(30.5, PREISPROLITER);
+        auto.tanken(40, PREISPROLITER);
         auto.tanken();
         auto.fahre(1000);
 
