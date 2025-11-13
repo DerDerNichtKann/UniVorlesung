@@ -48,7 +48,6 @@ public class Main {
         auto.tanken();
         auto.fahre(1000);
 
-
         /*
         statt:
         Auto auto1 = new Auto("VW", "Grün", 0, 80, 0);
