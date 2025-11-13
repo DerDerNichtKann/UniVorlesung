@@ -154,7 +154,7 @@
             (println (format "Tank ist leer nach ~a km. Dein Kilometerstand beträgt: ~a"
                              gefahren (+ (auto-kilometerstand wagen) gefahren)))
             (loop (- rest (auto-verbrauch wagen))
-                  (+ gefahren 1)))))))
+                  (+ gefahren 1))))))
 
 (define (auto-demo)
   (define wagen (mk-auto))

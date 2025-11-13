@@ -119,5 +119,4 @@ public class Auto {
         }
         return zutanken;
     }
-
 }

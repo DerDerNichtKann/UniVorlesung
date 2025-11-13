@@ -4,6 +4,7 @@ import org.uni.fahrzeuge.Auto;
 
 public class Main {
     public static final double PREISPROLITER = 2;
+
     static void main(String[] args) {
         System.out.println("Hello World!");
         IO.println("Hello World!");
@@ -27,7 +28,7 @@ public class Main {
         Autostuff();
     }
 
-    private static void Autostuff(){
+    private static void Autostuff() {
      /*   ArrayList<Auto> autos = new ArrayList<>();
         autos.add(new Auto("VW", "Grün", 0, 80, 0));
         autos.add(new Auto("Skoda", "Blau", 0, 50, 0));
@@ -190,7 +191,7 @@ public class Main {
         }
     }
 
-    private static void BenzinPreis(){
+    private static void BenzinPreis() {
         int getankteLiter = 62;
         double PreisproLiter = 1.459;
         double Betrag;
