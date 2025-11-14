@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.uni.Main;
 
+import java.util.ArrayList;
+
 public class Auto {
     @Getter
     @Setter
@@ -90,6 +92,15 @@ public class Auto {
         tankstand = maxTank;
         return zubetanken * Main.PREISPROLITER;
     }
+
+    public static void AlleAutosTanken(ArrayList<Auto> autos){
+        double gesamtpreis = 0;
+        for (Auto auto : autos){
+            gesamtpreis = gesamtpreis + auto.tankenohneprint();
+        }
+        IO.println("Das Tanken aller " + autos.size() + " Autos, hat " + gesamtpreis + "€ gekostet." );
+    }
+
 
     public double tanken(double liter, double preisProLiter){
         double tankmenge = liter + tankstand;

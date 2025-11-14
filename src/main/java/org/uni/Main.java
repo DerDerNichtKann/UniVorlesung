@@ -56,7 +56,7 @@ public class Main {
             IO.println(auto);
         }
         IO.println(autos.size());
-        AlleAutosTanken(autos);
+        Auto.AlleAutosTanken(autos);
         autos.remove(1);
         IO.println(autos.size());
 
@@ -107,15 +107,6 @@ public class Main {
         IO.println(Auto.getAnzahlAutos());
          */
     }
-
-    private static void AlleAutosTanken(ArrayList<Auto> autos){
-        double gesamtpreis = 0;
-        for (Auto auto : autos){
-            gesamtpreis = gesamtpreis + auto.tankenohneprint();
-        }
-        IO.println("Das Tanken aller " + autos.size() + " Autos, hat " + gesamtpreis + "€ gekostet." );
-    }
-
 
     private static void KomischeBerechnungen() {
         Kreisberchnung();
