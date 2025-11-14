@@ -98,7 +98,7 @@ public class Auto {
         for (Auto auto : autos){
             gesamtpreis = gesamtpreis + auto.tankenohneprint();
         }
-        IO.println("Das Tanken aller " + autos.size() + " Autos, hat " + gesamtpreis + "€ gekostet." );
+        IO.println("Das Tanken aller " + autos.size() + " Autos, hat " + String.format("%.2f", gesamtpreis) + "€ gekostet." );
     }
 
 
