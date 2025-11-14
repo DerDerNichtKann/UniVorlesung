@@ -1,6 +1,7 @@
 package org.uni;
 
 import org.uni.fahrzeuge.Auto;
+import org.uni.whisky.Artikel;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -31,6 +32,7 @@ public class Main {
         KomischeBerechnungen();
         Autostuff();
         Runden();
+        Artikel();
     }
 
     private static void Runden(){
@@ -106,6 +108,15 @@ public class Main {
 
         IO.println(Auto.getAnzahlAutos());
          */
+    }
+
+    private static void Artikel() {
+
+        Artikel whisky1 = new Artikel("Scotch1", "Malt Whysky", 10, 3);
+        Artikel whisky2 = new Artikel("Scotch2", "Old Whysky", 55, 15);
+
+        whisky1.anzeigen();
+        whisky2.anzeigen();
     }
 
     private static void KomischeBerechnungen() {
