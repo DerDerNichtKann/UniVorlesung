@@ -4,6 +4,7 @@ import org.uni.fahrzeuge.Auto;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 
 public class Main {
     public static final double PREISPROLITER = 2;
@@ -46,15 +47,44 @@ public class Main {
 
 
     private static void Autostuff() {
-     /*   ArrayList<Auto> autos = new ArrayList<>();
+        ArrayList<Auto> autos = new ArrayList<>();
         autos.add(new Auto("VW", "Grün", 0, 80, 0));
         autos.add(new Auto("Skoda", "Blau", 0, 50, 0));
+        autos.add(new Auto("BMW", "Schwarz", 0 , 60, 0));
+        for (Auto auto : autos){
+            IO.println(auto.marke + " " + auto.farbe);
+            IO.println(auto);
+        }
         IO.println(autos.size());
-        IO.println(autos.getFirst().getMaxTank());
-        IO.println(autos.getLast().getMarke()); */
+        AlleAutosTanken(autos);
+        autos.remove(1);
+        IO.println(autos.size());
+
+     /*   Auto auto1 = new Auto();
+        auto1.setMarke("VW");
+        Auto auto2 = new Auto();
+        auto2.setMarke("Skoda");
+        Auto auto3 = new Auto();
+        auto3.setMarke("BMW");
+        Auto auto4 = new Auto();
+        auto4.setMarke("Mercedes");
+        Auto[] fuhrpark = new Auto[5];
+        fuhrpark[0] = auto1;
+        fuhrpark[1] = auto2;
+        fuhrpark[2] = auto3;
+        fuhrpark[3] = auto4;
+        fuhrpark[3] = null;
+        int aktuelleAnzahlimFauhrpark = 0;
+        for (Auto aktuellesAuto : fuhrpark){
+            if (aktuellesAuto != null) {
+                IO.println(aktuellesAuto.getMarke());
+                aktuelleAnzahlimFauhrpark++;
+            }
+        }
+        IO.println(aktuelleAnzahlimFauhrpark);
+        */
         /*
         WENN DER KONSTRUKTOR NUR public Auto(){} ist:
-        */
         Auto auto = new Auto();
         auto.setMarke("VW");
         auto.setKilometerstand(0);
@@ -65,6 +95,7 @@ public class Main {
         auto.tanken(40, PREISPROLITER);
         auto.tanken();
         auto.fahre(1000);
+        */
 
         /*
         statt:
@@ -75,6 +106,14 @@ public class Main {
 
         IO.println(Auto.getAnzahlAutos());
          */
+    }
+
+    private static void AlleAutosTanken(ArrayList<Auto> autos){
+        double gesamtpreis = 0;
+        for (Auto auto : autos){
+            gesamtpreis = gesamtpreis + auto.tankenohneprint();
+        }
+        IO.println("Das Tanken aller " + autos.size() + " Autos, hat " + gesamtpreis + "€ gekostet." );
     }
 
 

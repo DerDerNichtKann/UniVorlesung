@@ -1,4 +1,3 @@
-//test blablabla
 package org.uni.fahrzeuge;
 
 import lombok.Getter;
@@ -8,29 +7,29 @@ import org.uni.Main;
 public class Auto {
     @Getter
     @Setter
-    private String marke;
+    public String marke;
     @Getter
     @Setter
-    private String farbe;
+    public String farbe;
     @Getter
     @Setter
-    private float tankstand;
+    public float tankstand;
     @Getter
     @Setter
-    private float maxTank;
+    public float maxTank;
     @Getter
     @Setter
-    private float kilometerstand;
+    public float kilometerstand;
     @Getter
     @Setter
-    private float verbrauch;
+    public float verbrauch;
     @Getter
-    private static int anzahlAutos;
+    public static int anzahlAutos;
 
     // Konstante für die Klasse private static final int KONSTANTE = 10;
 
     //Konstruktor
-   /* public Auto(String marke, String farbe, float tankstand, float maxTank, float kilometerstand) {
+    public Auto(String marke, String farbe, float tankstand, float maxTank, float kilometerstand) {
         this.marke = marke;
         this.farbe = farbe;
         this.tankstand = tankstand;
@@ -40,11 +39,11 @@ public class Auto {
         //tankstand = 0;
         //kilometerstand = 0;
         anzahlAutos++;
-    }*/
-
-
-    public Auto(){
     }
+
+
+    /*public Auto(){
+    }*/
 
 
     /*
@@ -84,6 +83,12 @@ public class Auto {
         double preis = zubetanken * Main.PREISPROLITER;
         IO.println("Du musst " + preis + "€ zahlen und das für " + zubetanken + " Liter.");
         return preis;
+    }
+
+    public double tankenohneprint(){
+        double zubetanken = maxTank - tankstand;
+        tankstand = maxTank;
+        return zubetanken * Main.PREISPROLITER;
     }
 
     public double tanken(double liter, double preisProLiter){
