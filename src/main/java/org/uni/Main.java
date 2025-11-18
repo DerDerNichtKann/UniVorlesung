@@ -3,7 +3,7 @@ package org.uni;
 import org.uni.fahrzeuge.Auto;
 import org.uni.fahrzeuge.Fahrzeuge;
 import org.uni.whisky.Artikel;
-import org.uni.whisky.Rabatt;
+import org.uni.whisky.Sonderposten;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -120,11 +120,11 @@ public class Main {
         whisky1.anzeigen();
         whisky2.anzeigen();
 
-        Rabatt rabatt1 = new Rabatt("Scotch1", "Malt Whysky", 10, 3);
-        Rabatt rabatt2 = new Rabatt("Scotch2", "Old Whysky", 55, 15);
+        Sonderposten sonderposten1 = new Sonderposten("Scotch1", "Malt Whysky", 10, 3);
+        Sonderposten sonderposten2 = new Sonderposten("Scotch2", "Old Whysky", 55, 15);
 
-        rabatt1.anzeigen();
-        rabatt2.anzeigen();
+        sonderposten1.anzeigen();
+        sonderposten2.anzeigen();
     }
 
     private static void KomischeBerechnungen() {

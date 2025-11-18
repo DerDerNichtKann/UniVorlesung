@@ -1,8 +1,8 @@
 package org.uni.whisky;
 
-public class Rabatt extends Artikel{
+public class Sonderposten extends Artikel{
     private double rabatt;
-    public Rabatt(String artikelNr, String bezeichnung, double einkaufspreis, int lagerzeit) {
+    public Sonderposten(String artikelNr, String bezeichnung, double einkaufspreis, int lagerzeit) {
         super(artikelNr, bezeichnung, einkaufspreis, lagerzeit);
     }
     public int berechneVerkaufspreis() {
@@ -16,6 +16,7 @@ public class Rabatt extends Artikel{
         double verkaufspreis = preisMitSpanneRabatt * (1 + MWST);
         return (int) Math.round(verkaufspreis);
     }
+
     public void anzeigen() {
         int verkaufspreis = this.berechneVerkaufspreis();
         IO.println(
