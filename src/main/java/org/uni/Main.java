@@ -1,7 +1,9 @@
 package org.uni;
 
 import org.uni.fahrzeuge.Auto;
+import org.uni.fahrzeuge.Fahrzeuge;
 import org.uni.whisky.Artikel;
+import org.uni.whisky.Rabatt;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -50,15 +52,15 @@ public class Main {
 
     private static void Autostuff() {
         ArrayList<Auto> autos = new ArrayList<>();
-        autos.add(new Auto("VW", "Grün", 0, 80, 0));
-        autos.add(new Auto("Skoda", "Blau", 0, 50, 0));
-        autos.add(new Auto("BMW", "Schwarz", 0 , 60, 0));
+        autos.add(new Auto("VW", "Grün", 0, 80, 0, 100));
+        autos.add(new Auto("Skoda", "Blau", 0, 50, 0, 100));
+        autos.add(new Auto("BMW", "Schwarz", 0 , 60, 0, 100));
         for (Auto auto : autos){
             IO.println(auto.marke + " " + auto.farbe);
             IO.println(auto);
         }
         IO.println(autos.size());
-        Auto.AlleAutosTanken(autos);
+        Fahrzeuge.AlleAutosTanken(autos);
         autos.remove(1);
         IO.println(autos.size());
 
@@ -117,6 +119,12 @@ public class Main {
 
         whisky1.anzeigen();
         whisky2.anzeigen();
+
+        Rabatt rabatt1 = new Rabatt("Scotch1", "Malt Whysky", 10, 3);
+        Rabatt rabatt2 = new Rabatt("Scotch2", "Old Whysky", 55, 15);
+
+        rabatt1.anzeigen();
+        rabatt2.anzeigen();
     }
 
     private static void KomischeBerechnungen() {
