@@ -30,7 +30,7 @@ public class Mitarbeiter {
         if (prozent > 20) {
             IO.println("Warnung: Gehaltserhöhung über 20%!");
         }
-        this.gehalt += this.gehalt * (prozent / 100.0);
+            this.gehalt = this.gehalt + this.gehalt * (prozent / 100.0);
     }
 
     public String getJobInfo() {

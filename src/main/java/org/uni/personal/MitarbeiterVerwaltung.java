@@ -2,8 +2,8 @@ package org.uni.personal;
 import java.util.ArrayList;
 
 public class MitarbeiterVerwaltung {
-    private String nameDesUnternehmens;
-    private ArrayList<Mitarbeiter> alleMitarbeiter;
+    private final String nameDesUnternehmens;
+    private final ArrayList<Mitarbeiter> alleMitarbeiter;
 
     public MitarbeiterVerwaltung(String name) {
         this.nameDesUnternehmens = name;
@@ -26,7 +26,7 @@ public class MitarbeiterVerwaltung {
 
     public Mitarbeiter findeTeuerstenMitarbeiter() {
         if (alleMitarbeiter.isEmpty()) return null;
-        Mitarbeiter teuerster = alleMitarbeiter.get(0);
+        Mitarbeiter teuerster = alleMitarbeiter.getFirst();
         for (Mitarbeiter m : alleMitarbeiter) {
             if (m.getGehalt() > teuerster.getGehalt()) teuerster = m;
         }

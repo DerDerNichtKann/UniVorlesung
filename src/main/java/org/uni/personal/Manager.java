@@ -3,9 +3,9 @@ package org.uni.personal;
 import lombok.Getter;
 
 public class Manager extends Mitarbeiter {
-    private double grundgehalt;
+    private final double grundgehalt;
     @Getter
-    private double bonus;
+    private final double bonus;
 
     public Manager(int mitarbeiterNr, String name, double grundgehalt, double bonus) {
         super(mitarbeiterNr, name, 0, "Manager");

@@ -1,8 +1,8 @@
 package org.uni.personal;
 
 public class Stundenloehner extends Mitarbeiter {
-    private double stundenlohn;
-    private int monatlicheArbeitsstunden;
+    private final double stundenlohn;
+    private final int monatlicheArbeitsstunden;
 
     public Stundenloehner(int mitarbeiterNr, String name, double stundenlohn, int stunden) {
         super(mitarbeiterNr, name, 0, "Stundenloehner");
