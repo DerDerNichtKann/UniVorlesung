@@ -19,6 +19,10 @@ public class Auto extends Fahrzeuge{
     }
 
 
+    public void hupen() {
+        IO.println("Das Auto hupt.");
+    }
+
     /*public Auto(){
     }*/
 

@@ -116,4 +116,8 @@ public class Fahrzeuge {
         return zutanken;
     }
 
+    public void hupen(){
+        IO.println("Das Fahrzeug hupt.");
+    }
+
 }

@@ -2,6 +2,11 @@ package org.uni;
 
 import org.uni.fahrzeuge.Auto;
 import org.uni.fahrzeuge.Fahrzeuge;
+import org.uni.fahrzeuge.Motorad;
+import org.uni.personal.Manager;
+import org.uni.personal.Mitarbeiter;
+import org.uni.personal.MitarbeiterVerwaltung;
+import org.uni.personal.Stundenloehner;
 import org.uni.whisky.Artikel;
 import org.uni.whisky.Sonderposten;
 
@@ -30,21 +35,21 @@ public class Main {
         String hallo = text.substring(1, 5);
         IO.println(hallo);
         text.substring(1, 5).indexOf("llo");
-
         KomischeBerechnungen();
         Autostuff();
         Runden();
         Artikel();
+        MitarbeiterStuff();
     }
 
     private static void Runden(){
         double preis = 10.145;
         String formatierterPreis = String.format("%.2f", preis);
-        System.out.println(formatierterPreis);
+        IO.println(formatierterPreis);
 
         BigDecimal anderPreis = new BigDecimal("10.145");
         BigDecimal gerundeterPreis = anderPreis.setScale(2, RoundingMode.HALF_UP);
-        System.out.println(gerundeterPreis);
+        IO.println(gerundeterPreis);
     }
 
 
@@ -63,7 +68,10 @@ public class Main {
         Fahrzeuge.AlleAutosTanken(autos);
         autos.remove(1);
         IO.println(autos.size());
-
+        Auto auto = new Auto("VW", "Grün", 0, 80, 0, 100);
+        auto.hupen();
+        Motorad motorad = new Motorad("String marke," ,"String farbe," ,100, 100, 100, 100, false, false, "String kategorie");
+        motorad.hupen();
      /*   Auto auto1 = new Auto();
         auto1.setMarke("VW");
         Auto auto2 = new Auto();
@@ -110,6 +118,28 @@ public class Main {
 
         IO.println(Auto.getAnzahlAutos());
          */
+    }
+
+    private static void MitarbeiterStuff() {
+
+        Mitarbeiter m1 = new Mitarbeiter(1, "Max Mustermann", 3000, "Entwickler");
+        Manager man1 = new Manager(2, "Chef Anna", 5000, 3500);
+        Stundenloehner s1 = new Stundenloehner(3, "Student Tom", 15, 80);
+
+        MitarbeiterVerwaltung verwaltung = new MitarbeiterVerwaltung("Uni TechCorp");
+        verwaltung.hinzufuegen(m1);
+        verwaltung.hinzufuegen(man1);
+        verwaltung.hinzufuegen(s1);
+
+        verwaltung.alleAnzeigen();
+
+        IO.println(">> Erhöhe alle Gehälter um 20%...");
+        verwaltung.erhoeheAllenGehalt(20);
+
+        Mitarbeiter teuer = verwaltung.findeTeuerstenMitarbeiter();
+        if(teuer != null) {
+            IO.println("Teuerster MA ist jetzt: " + teuer.getName() + " mit " + teuer.getGehalt());
+        }
     }
 
     private static void Artikel() {

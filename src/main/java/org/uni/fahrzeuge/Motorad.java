@@ -10,4 +10,8 @@ public class Motorad extends Fahrzeuge{
         this.hatKettenantrieb = hatKettenantrieb;
         this.kategorie = kategorie;
     }
+
+    public void hupen() {
+        IO.println("Das Motorrad hupt.");
+    }
 }
