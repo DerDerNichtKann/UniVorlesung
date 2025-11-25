@@ -1,10 +1,13 @@
 package org.uni.personal;
 
+import lombok.Getter;
+
+@Getter
 public class Mitarbeiter {
-    private int mitarbeiterNr;
-    private String name;
+    private final int mitarbeiterNr;
+    private final String name;
     protected double gehalt;
-    private String jobbezeichnung;
+    private final String jobbezeichnung;
 
     public Mitarbeiter(int mitarbeiterNr, String name, double gehalt, String jobbezeichnung) {
         this.mitarbeiterNr = mitarbeiterNr;
@@ -37,8 +40,4 @@ public class Mitarbeiter {
         return "Job: " + this.jobbezeichnung;
     }
 
-    public int getMitarbeiterNr() { return mitarbeiterNr; }
-    public String getName() { return name; }
-    public double getGehalt() { return gehalt; }
-    public String getJobbezeichnung() { return jobbezeichnung; }
 }
