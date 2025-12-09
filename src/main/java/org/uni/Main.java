@@ -60,6 +60,7 @@ public class Main {
 
 
     public static void druckeVersicherungskosten(Fahrzeuge[] fahrzeuge, int fahrerAlter) {
+        IO.println("");
         IO.println("Berechnung für Fahrer-Alter: " + fahrerAlter);
         for (Fahrzeuge fz : fahrzeuge) {
             if (fz != null) {
@@ -68,7 +69,6 @@ public class Main {
                         + String.format("%.2f", kosten) + " Euro");
             }
         }
-        IO.println("");
     }
 
     private static void VersicherungsTest() {
