@@ -53,6 +53,6 @@ public class MitarbeiterVerwaltung {
 
     public void alleAnzeigen() {
         IO.println("Mitarbeiterliste Firma: " + nameDesUnternehmens);
-        for(Mitarbeiter m : alleMitarbeiter) m.anzeigen();
+        for (Mitarbeiter m : alleMitarbeiter) m.anzeigen();
     }
 }

@@ -47,7 +47,7 @@ public class Fahrzeuge {
         double gefahrenbistankalleinkm = 0;
         if (kraftstoffverbrauchliter <= tankstand){
             tankstand = (float) (tankstand - kraftstoffverbrauchliter);
-            kilometerstand =+ kilometer;
+            kilometerstand = kilometerstand + kilometer;
             IO.println("Das Auto ist " + kilometer + "km gefahren und hat noch einen Tankstand von: " + tankstand + "L.");
         } else {
             while (!istleer()){
@@ -84,7 +84,7 @@ public class Fahrzeuge {
 
     public double tanken(double liter, double preisProLiter){
         double tankmenge = liter + tankstand;
-        double zuzahlen = 0;
+        double zuzahlen;
         if (tankmenge <= maxTank){
             zuzahlen = liter * preisProLiter;
             tankstand = (float) tankmenge;

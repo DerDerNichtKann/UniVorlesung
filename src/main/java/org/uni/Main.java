@@ -10,9 +10,14 @@ import org.uni.personal.Stundenloehner;
 import org.uni.whisky.Artikel;
 import org.uni.whisky.Sonderposten;
 
+import javax.print.DocFlavor;
+import java.awt.desktop.OpenFilesEvent;
+import java.io.File;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
 
 public class Main {
     public static final double PREISPROLITER = 2;
@@ -119,6 +124,7 @@ public class Main {
         IO.println(Auto.getAnzahlAutos());
          */
     }
+
 
     private static void MitarbeiterStuff() {
 
