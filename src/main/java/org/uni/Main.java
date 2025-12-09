@@ -45,6 +45,7 @@ public class Main {
         Runden();
         Artikel();
         MitarbeiterStuff();
+        VersicherungsTest();
     }
 
     private static void Runden(){
@@ -58,7 +59,30 @@ public class Main {
     }
 
 
+    public static void druckeVersicherungskosten(Fahrzeuge[] fahrzeuge, int fahrerAlter) {
+        IO.println("Berechnung für Fahrer-Alter: " + fahrerAlter);
+        for (Fahrzeuge fz : fahrzeuge) {
+            if (fz != null) {
+                double kosten = fz.berechneVersicherung(fahrerAlter);
+                IO.println(fz.getClass().getSimpleName() + " (" + fz.marke + "): "
+                        + String.format("%.2f", kosten) + " Euro");
+            }
+        }
+        IO.println("");
+    }
 
+    private static void VersicherungsTest() {
+        Fahrzeuge[] fuhrpark = new Fahrzeuge[4];
+        fuhrpark[0] = new Auto("VW", "Grün", 0, 80, 0, 100);
+        fuhrpark[1] = new Auto("Porsche", "Rot", 0, 60, 0, 300);
+
+        fuhrpark[2] = new Motorad("Yamaha", "Blau", 10, 20, 0, 600, false, true, "Sport");
+        fuhrpark[3] = new Motorad("Harley", "Schwarz", 10, 20, 0, 1200, false, true, "Chopper");
+
+        druckeVersicherungskosten(fuhrpark, 20);
+        druckeVersicherungskosten(fuhrpark, 30);
+        druckeVersicherungskosten(fuhrpark, 55);
+    }
 
     private static void Autostuff() {
         ArrayList<Auto> autos = new ArrayList<>();

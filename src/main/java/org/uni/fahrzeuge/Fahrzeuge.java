@@ -59,6 +59,14 @@ public class Fahrzeuge {
         }
     }
 
+    public double berechneVersicherung(int fahrerAlter) {
+        double basisPreis = 500.0;
+        if (fahrerAlter < 25) {
+            basisPreis += 200.0;
+        }
+        return basisPreis;
+    }
+
     public double tanken(){
         double zubetanken = maxTank - tankstand;
         tankstand = maxTank;

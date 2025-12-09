@@ -23,6 +23,23 @@ public class Auto extends Fahrzeuge{
         IO.println("Das Auto hupt.");
     }
 
+    @Override
+    public double berechneVersicherung(int fahrerAlter) {
+        double preis = 600.0;
+
+        if (this.hubraum > 150) {
+            preis += 100.0;
+        }
+
+        if (fahrerAlter < 25) {
+            preis += 200.0;
+        } else if (fahrerAlter > 50) {
+            preis -= 50.0;
+        }
+
+        return preis;
+    }
+
     /*public Auto(){
     }*/
 

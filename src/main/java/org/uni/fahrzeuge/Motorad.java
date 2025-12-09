@@ -14,4 +14,17 @@ public class Motorad extends Fahrzeuge{
     public void hupen() {
         IO.println("Das Motorrad hupt.");
     }
+
+    @Override
+    public double berechneVersicherung(int fahrerAlter) {
+        double preis = 400.0;
+
+        if (fahrerAlter < 25) {
+            preis += 300.0;
+        } else if (fahrerAlter >= 40) {
+            preis -= 50.0;
+        }
+
+        return preis;
+    }
 }
