@@ -6,7 +6,7 @@ import org.uni.Main;
 
 import java.util.ArrayList;
 
-public class Fahrzeuge {
+public class Fahrzeuge{
     @Getter
     @Setter
     public String marke;

@@ -1,12 +1,8 @@
 package org.uni.fahrzeuge;
 
 import lombok.Getter;
-import lombok.Setter;
-import org.uni.Main;
 
-import java.util.ArrayList;
-
-public class Auto extends Fahrzeuge{
+public class Auto extends Fahrzeuge implements Waschbar{
     @Getter
     public static int anzahlAutos;
 
@@ -38,6 +34,11 @@ public class Auto extends Fahrzeuge{
         }
 
         return preis;
+    }
+
+    @Override
+    public boolean waschbar(double liter) {
+        return true;
     }
 
     /*public Auto(){

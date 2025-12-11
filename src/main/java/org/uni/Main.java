@@ -2,6 +2,7 @@ package org.uni;
 
 import org.uni.fahrzeuge.Auto;
 import org.uni.fahrzeuge.Fahrzeuge;
+import org.uni.fahrzeuge.Kraftstoff;
 import org.uni.fahrzeuge.Motorad;
 import org.uni.personal.Manager;
 import org.uni.personal.Mitarbeiter;

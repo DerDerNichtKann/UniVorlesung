@@ -1,6 +1,6 @@
 package org.uni.fahrzeuge;
 
-public class Motorad extends Fahrzeuge{
+public class Motorad extends Fahrzeuge implements Waschbar{
     boolean hatBeiwagen;
     boolean hatKettenantrieb;
     String kategorie;
@@ -9,6 +9,11 @@ public class Motorad extends Fahrzeuge{
         this.hatBeiwagen = hatBeiwagen;
         this.hatKettenantrieb = hatKettenantrieb;
         this.kategorie = kategorie;
+    }
+
+    @Override
+    public boolean waschbar(double liter){
+        return false;
     }
 
     public void hupen() {
