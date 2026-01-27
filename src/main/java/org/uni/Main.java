@@ -47,6 +47,11 @@ public class Main {
         Artikel();
         MitarbeiterStuff();
         VersicherungsTest();
+        IO.println(add(Integer.MAX_VALUE, Integer.MAX_VALUE));
+    }
+
+    private static int add(int a, int b){
+        return a +b;
     }
 
     private static void Runden(){
